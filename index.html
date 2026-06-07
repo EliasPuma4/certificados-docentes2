@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulta de Certificados</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="panel buscador">
+      <h1>Consulta de Certificados</h1>
+      <p class="subtitulo">Ingrese su carnet o escriba mínimo 3 letras del nombre.</p>
+
+      <div class="search-box">
+        <input id="searchInput" type="text" placeholder="Ej: 03833383 o LENNY" autocomplete="off" />
+        <button id="btnBuscar" type="button">Buscar</button>
+      </div>
+
+      <p id="estado" class="estado">Cargando base de datos...</p>
+      <div id="resultados" class="resultados"></div>
+    </section>
+
+    <section id="previewSection" class="panel preview-section oculto">
+      <div class="preview-header">
+        <div>
+          <h2>Vista previa</h2>
+          <p id="datosSeleccionados" class="datos-seleccionados"></p>
+        </div>
+        <button id="btnDescargar" class="btn-descargar" type="button">Descargar PDF</button>
+      </div>
+
+      <div class="certificado-wrap">
+        <div id="certificadoPreview" class="certificado-preview">
+          <img src="certificado-fondo.jpg" alt="Fondo del certificado" />
+          <div id="previewNombre" class="preview-nombre"></div>
+          <div id="previewCargo" class="preview-cargo"></div>
+          <div class="preview-qr-box"><img id="previewQR" alt="Código QR" /></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="qrcode-bundle.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
